@@ -23,7 +23,8 @@ var comment  = require('./routes/comment');
 
 //set Routes
 app.use('/api/register',register);
-app.use('/api/admin',authentication,admin);
+// app.use('/api/admin',authentication,admin);
+app.use('/api/admin',admin);
 app.use('/api/upload',upload);
 app.use('/api/comment',comment);
 // app.use('/api/naming',naming);
