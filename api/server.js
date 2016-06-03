@@ -4,7 +4,7 @@ var models	 	= require('./models');
 var bodyParser  = require('body-parser');
 
 var app 		= express();
-var port 		= 8888;
+var port 		= 80;
 
 //app config
 app.use(bodyParser.json());
