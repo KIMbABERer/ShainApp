@@ -1,0 +1,26 @@
+{
+  "name": "shain",
+  "authors": [
+    "KIMbABERer"
+  ],
+  "description": "",
+  "main": "",
+  "license": "MIT",
+  "homepage": "",
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ],
+  "dependencies": {
+    "angular-ui-router": "^0.3.0",
+    "angular-file-upload": "^2.3.2",
+    "angular-messages": "^1.5.5",
+    "bootstrap": "^3.3.6",
+    "animate.css": "^3.5.1",
+    "bootstrap-calendar": "^0.2.5",
+    "font-awesome": "fontawesome#^4.6.3"
+  }
+}

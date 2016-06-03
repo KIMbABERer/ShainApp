@@ -1,0 +1,121 @@
+<div class="row">
+
+	<div class="col-sm-12 col-md-4">
+		<div>
+			<button class="log_out_btn button button--wayra button--border-thick button--text-upper button--size-s" ng-click="ctrl.logout()">Log Out</button>
+		</div>
+	</div>
+		
+	<div class="col-sm-12 col-md-4">
+		<h1 style="text-align:center; margin-top:50px;">Hello {{ ctrl.log_In_Name }}</h1>
+	</div>	
+
+	<span class="col-sm-12 col-md-4">
+		<form ng-submit="ctrl.searchUsers(ctrl.name)">
+	        <div style="text-align:center;">
+				<div class="input input--nao">
+					<input style="height: 60px; color: #0983F3; font-size: 2em;" class="input__field input__field--nao" ng-model="ctrl.name" type="text" id="input-1" />
+
+					<label class="input__label input__label--nao nao_input" for="input-1">
+						<span class="input__label-content input__label-content--nao">{{ctrl.searchBtn}}</span>
+					</label>
+
+					<svg class="graphic graphic--nao" width="300%" height="100%" viewBox="0 0 1200 60" preserveAspectRatio="none">
+						<path d="M0,56.5c0,0,298.666,0,399.333,0C448.336,56.5,513.994,46,597,46c77.327,0,135,10.5,200.999,10.5c95.996,0,402.001,0,402.001,0"/>
+					</svg>
+				</div>
+			</div>
+		</form>
+	</span>
+		
+	<div class="row">
+		<div class="col-md-4">
+			<h3>ID: {{ ctrl.user.user.id }}</h3>
+			<h6>EMAIL: {{ ctrl.user.user.email }}</h6>
+			<h6>FIRST NAME: {{ ctrl.user.user.first_name }}</h6>
+			<h6>LAST NAME: {{ ctrl.user.user.last_name }}</h6>
+			<h6>CREATES AT: {{ ctrl.user.user.createdAt }}</h6>
+			<h6>UPDATED AT: {{ ctrl.user.user.updatedAt }}</h6>
+		</div>
+
+	    <div class="col-md-4">
+			<h3>INTEREST:</h3>
+			<h6>{{ ctrl.user.user.interests }}</h6>
+		</div>
+	</div>	
+
+	<hr>
+
+	<div ng-controller="upCtrl as ctrl">
+
+		<div class="row">
+			<div class="col-md-4 col-md-offset-4 uploadBox">
+				<form ng-submit="ctrl.uploadedFile()" enctype="multipart/form-data">
+					<div class="box">
+
+						<input type="file" file-model="ctrl.file" name="file-3[]" id="file-3" class="inputfile inputfile-3" data-multiple-caption="{count} files selected" multiple />
+						<label class="uploadLabel" for="file-3"><svg xmlns="http://www.w3.org/2000/svg" width="20" height="17" viewBox="0 0 20 17"><path d="M10 0l-5.2 4.9h3.3v5.1h3.8v-5.1h3.3l-5.2-4.9zm9.3 11.5l-3.2-2.1h-2l3.4 2.6h-3.5c-.1 0-.2.1-.2.1l-.8 2.3h-6l-.8-2.2c-.1-.1-.1-.2-.2-.2h-3.6l3.4-2.6h-2l-3.2 2.1c-.4.3-.7 1-.6 1.5l.6 3.1c.1.5.7.9 1.2.9h16.3c.6 0 1.1-.4 1.3-.9l.6-3.1c.1-.5-.2-1.2-.7-1.5z"/></svg> <span>Choose a picture&hellip;</span></label>
+
+						<button class="upload_btn button button--rayen button--border-medium button--text-thin button--size-l button--inverted" type="submit" data-text="Good job!"><span>UPLOAD</span></button>
+
+					</div>
+				</form>			
+			</div> 
+	    </div>
+
+        <div class="row">
+			<div style="text-align: center;" class="col-sm-6 col-md-4" ng-repeat="image in ctrl.images">
+		        <div class="picturePatch">
+					<span style="float:right;margin-bottom:10px;margin-left:10px;" class="glyphicon glyphicon-remove" ng-click="ctrl.erasePic(image.id)" aria-hidden="true"></span>
+
+          <!--       <div style="max-height: 175px;box-sizing: border-box;">
+                    <div class="view view-second" style="width:175px;max-height:175px;margin-left:0;margin-right:0;">
+	                    <img style="max-height: 175px;" class="img-thumbnail" src="{{ image.pic }}">
+	                    <div class="mask"></div>
+	                    <div class="content" style="height: 175px;width: 175px;">
+	                        <h2>Hover Style #2</h2>
+	                        <p>A wonderful serenity has taken possession of my entire soul, like these sweet mornings of spring which I enjoy with my whole heart.</p>
+	                        <a href="#" class="info">Read More</a>
+	                    </div>
+                    </div>
+				</div> -->
+
+				    <div>
+					    <img style="max-height: 175px;" class="img-thumbnail" src="{{ image.pic }}">
+					    
+					</div>
+
+				    <div class="patchButton">
+					    <span class="glyphicon glyphicon-heart-empty" ng-hide="comment.heart" aria-hidden="true" ng-click="comment.heart = !comment.heart"></span>
+					    <span class="glyphicon glyphicon-heart" ng-show="comment.heart" ng-click="comment.heart = !comment.heart" aria-hidden="true"></span>
+					    <span class="glyphicon glyphicon-comment" ng-click="comment.commentCount = !comment.commentCount" aria-hidden="true"></span>
+					</div>
+
+				    <hr class="patchLine">
+
+				    <h5 style="font-size: 2em; font-weight: bold;" ng-show="comment.commentCount">{{ctrl.comments[image.id].length}}</h5>
+
+		            <div id="textBox{{image.id}}" ng-hide="comment.commentCount" class="textBox">
+					    <h6  ng-repeat="comment in ctrl.comments[image.id] track by $index" >{{ comment }}</h6>   
+					</div>
+
+					<span class="input input--kozakura">
+		            <form ng-submit="ctrl.postComment(ctrl.commentResult,image.id,$index)">
+						<input  class="input__field input__field--kozakura" type="text" id="input-7" ng-model="ctrl.commentResult"/>
+						<label class="input__label input__label--kozakura" for="input-7">
+						<span class="input__label-content input__label-content--kozakura" data-content="comment">Comment</span>
+						</label>
+						<svg class="graphic graphic--kozakura" width="300%" height="100%" viewBox="0 0 1200 60" preserveAspectRatio="none">
+							<path d="M1200,9c0,0-305.005,0-401.001,0C733,9,675.327,4.969,598,4.969C514.994,4.969,449.336,9,400.333,9C299.666,9,0,9,0,9v43c0,0,299.666,0,400.333,0c49.002,0,114.66,3.484,197.667,3.484c77.327,0,135-3.484,200.999-3.484C894.995,52,1200,52,1200,52V9z"/>
+						</svg>
+					</form>
+					</span>
+
+				</div>
+			</div>	
+		</div>
+
+	</div>
+</div>
+
+

@@ -1,0 +1,17 @@
+<span class="row">
+    <h1 class="col-md-5" style="margin-left:15px; padding:0;" >User DATABASES</h1> 
+	<input class="searchUsers col-md-6" type="text" name="user" ng-model="searchText">
+</span>
+
+<div class="usersInfo col-md-6" ng-repeat="user in ctrl.users | filter:searchText" style="float:left;">
+    <h3>ID: {{ user.id }}</h3>
+    <h6>EMAIL: {{ user.email }}</h6>
+    <h6>PASSWORD: {{ user.password }}</h6>
+    <h6>FIRST NAME: {{ user.first_name }}</h6>
+    <h6>LAST NAME: {{ user.last_name }}</h6>
+    <h6>INTEREST: {{ user.interests }}</h6>
+    <h6>CREATES AT: {{ user.createdAt }}</h6>
+    <h6>UPDATED AT: {{ user.updatedAt }}</h6>
+    <button ng-click="ctrl.delAccount(user.id)">DELETE</button>
+</div>
+

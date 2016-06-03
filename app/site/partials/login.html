@@ -1,0 +1,48 @@
+
+<div style="text-align: center;">
+
+	<h1>Welcome to SHAIN</h1>
+
+	<div class="row">
+	    
+	    <form method="post" ng-submit="ctrl.authenticate()">
+		    <div class="login col-md-6">
+		        <h5>Email</h5>
+			    <input type="email" name="emailLog" class="form-control input-lg" ng-model="ctrl.emailLog">
+			    <h5>Password</h5>
+			    <input type="password" name="passwordLog" class="form-control input-lg" ng-model="ctrl.passwordLog">
+			    <!-- <button type="submit" class="loginbtn btn btn-default">{{ ctrl.auth_btn }}</button> -->
+			    <!-- <button type="submit" class="button button--winona button--border-thin button--round-s" data-text="Welcome to shain"><span>{{ ctrl.auth_btn }}</span></button> -->
+			    <button class="front-btn button button--nina button--text-thick button--text-upper button--size-s" data-text="LOG IN">
+					<span>L</span><span>O</span><span>G</span><span>&nbsp;</span><span>I</span><span>N</span>
+				</button>
+				<h3 ng-show="ctrl.warning">{{ ctrl.auth_btn + " !" }}</h3>
+		    </div>
+		</form>
+		
+	    <form method="post" ng-submit="ctrl.register()">
+		    <div class="create col-md-6">
+			    <h5>First Name</h5>
+			    <input type="text" name="firstName" class="form-control input-lg" ng-model="ctrl.firstName">
+			    <h5>Last Name</h5>
+			    <input type="text" name="lastName" class="form-control input-lg" ng-model="ctrl.lastName">
+			    <h5>Email</h5>
+			    <input type="email" name="email" class="form-control input-lg" ng-model="ctrl.email">
+			    <h5>Password</h5>
+			    <input type="password" name="password" class="form-control input-lg" ng-model="ctrl.password">
+			    <h5>Interest</h5>
+			    <input type="text" name="interest" class="form-control input-lg" ng-model="ctrl.interest">
+
+			    <!--   <button type="submit" class="createbtn btn btn-default">{{ ctrl.register_btn }}</button> -->
+			   <!--  <button type="submit" class="button button--winona button--border-thin button--round-s" data-text="You did it!"><span>{{ ctrl.register_btn }}</span></button>
+ -->
+			    <button class="front-btn button button--nina button--text-thick button--text-upper button--size-s" data-text="Create an account">
+					<span>Create an account</span>
+				</button>
+				<h3 ng-show="ctrl.createAccountWarning">{{ctrl.register_btn + " !"}}</h3>
+		    </div>
+		</form>    
+		
+	</div>
+
+</div>

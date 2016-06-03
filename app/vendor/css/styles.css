@@ -1,0 +1,188 @@
+body {
+	background: none;
+	font-size: 2em; 
+}
+ 
+.row {
+	width: 80%;
+	margin: 0 auto;
+}
+
+.create {
+	padding: 50px;
+	border-left: 3px solid #333;
+} 
+
+.login {
+	padding: 50px;
+}
+
+.loginbtn , .createbtn {
+	margin-top: 10px;
+	margin-bottom: 10px;	
+}
+
+.inputfile {
+	width: 0.1px;
+	height: 0.1px;
+	opacity: 0;
+	overflow: hidden;
+	position: absolute;
+	z-index: -1;
+}
+
+.glyphicon-chevron-left {
+	font-size: 3em;
+	color: rgba(0, 0, 255, 0.3);
+}
+
+.glyphicon-chevron-left:hover {
+    color: black;
+}
+
+.box {
+	text-align: center;
+	padding-top: 15px;
+	padding-bottom: 15px;
+}
+
+.uploadBox {
+	margin-top: 50px;
+	margin-bottom: 50px; 
+	background-color: lightskyblue;
+	/*border: 3px solid crimson;*/
+	border-radius: 25px;
+}
+
+.uploadBtn {
+	margin-bottom: 20px;
+}
+
+.uploadLabel {
+	margin-top: 13.75px;
+}
+
+hr {
+	color:black;
+	width: 80%;
+	border-top: 1px solid black;
+	margin-bottom: 0px;
+}
+
+.glyphicon-chevron-left {
+	margin-top: 10px;
+}
+
+.visitorLine {
+	margin-bottom: 20px;
+}
+
+.picturePatch{
+	background-color: lightskyblue;
+	padding: 0 20px;
+	padding-top: 15px;
+	/*box-shadow: 10px 10px 5px crimson;*/
+	border-radius: 20px;
+	margin:20px;
+	margin-bottom: 50px;
+	transition: all .5s ease-in-out;
+	
+	/*height: 450px;*/
+}
+
+.picturePatch:hover { 
+	transform: scale(1.2); 
+	z-index: 10;
+}
+
+.patchLine {
+	margin-top: 10px;
+}
+
+.patchButton {
+	margin-top: 10px;
+	font-size: 1.5em;
+}
+
+.patchButton > .glyphicon {
+	margin: 0 10px;
+}
+
+.glyphicon-remove {
+    opacity: 0.3;
+}
+
+.glyphicon { 
+	transition: all .3s ease-in-out; 
+}
+
+.glyphicon:hover { 
+	transform: scale(1.5); 
+	color:black;
+	opacity: 1;
+}
+
+.glyphicon:active {
+    opacity: 0.3;
+    transform: translateY(4px);
+}
+
+.textBox {
+	height:120px;width:120px;
+	/*font:bold 16px/26px Courier New;*/
+	font: bold 16px/36px Courier New, monospace;
+	/*font:16px/26px Source Sans Pro, Serif;*/
+	overflow:auto;margin:0 auto;"
+}
+
+.col-md-4:nth-child(3n+1){
+    clear: left;
+}
+
+/*.hoshi_adjust {
+	height: 70px;
+}
+*/
+
+.nao_input {
+	font-size: 15px;
+}
+
+.col-sm-12 {
+	padding-right: auto;
+	padding-left: auto;
+}
+
+.log_out_btn {
+	line-height: 10px; /* <- changed this */
+    box-sizing: border-box;
+    margin: 35px auto;
+    float: none;
+    width: 208px;
+    border: 1px solid;
+    border-radius: 25px;
+}
+
+.upload_btn {
+	border:1px solid;
+	border-radius: 40px;
+	float: none;
+}
+
+.front-btn {
+	float: none;
+	margin: 20px auto;
+	border-radius: 8px;
+}
+
+.searchUsers {
+	margin-top: 30px;
+	margin-right: 30px;
+	float: right;
+	width: 200px;
+}
+
+/*img:hover {
+	background: lightskyblue;
+	opacity: 0.3;
+}*/

@@ -1,0 +1,70 @@
+<div class="row">
+    <span class="col-md-4">
+    	<span class="glyphicon glyphicon-chevron-left" ng-click="ctrl.goBack()" aria-hidden="true"></span>
+    </span>
+
+	<span class="col-md-4">
+		<h1 style="text-align: center;">Welcome to {{ ctrl.user.first_name }} page</h1>
+	</span>	
+		
+	<div class="row">
+		<div class="col-md-4">
+			<h3>ID: {{ ctrl.user.id }}</h3>
+			<h6>EMAIL: {{ ctrl.user.email }}</h6>
+			<h6>FIRST NAME: {{ ctrl.user.first_name }}</h6>
+			<h6>LAST NAME: {{ ctrl.user.last_name }}</h6>
+			<h6>CREATES AT: {{ ctrl.user.createdAt }}</h6>
+			<h6>UPDATED AT: {{ ctrl.user.updatedAt }}</h6>
+		</div>
+
+	    <div class="col-md-4">
+			<h3>INTEREST:</h3>
+			<h6>{{ ctrl.user.interests }}</h6>
+		</div>
+	</div>	
+
+	<hr class="visitorLine">
+ 
+    <!-- <div class="row">
+		<div style="text-align: center;" ng-repeat="image in ctrl.images">
+	        <div style="width: 200px; height: 200px;" class="col-md-4">
+			    <img style="width: 200px;" class="img-thumbnail" src="{{ image.pic }}">
+			</div>
+		</div>
+	</div> -->
+
+        <div class="row">
+			<div style="text-align: center;" class="col-sm-6 col-md-4" ng-repeat="image in ctrl.images">
+		        <div class="picturePatch" style="margin-top:50px;">
+				    <img style="max-height: 175px;" class="img-thumbnail" src="{{ image.pic }}">
+				    <div class="patchButton">
+					    <span class="glyphicon glyphicon-heart-empty" ng-hide="comment.heart" aria-hidden="true" ng-click="comment.heart = !comment.heart"></span>
+					    <span class="glyphicon glyphicon-heart" ng-show="comment.heart" ng-click="comment.heart = !comment.heart" aria-hidden="true"></span>
+					    <span class="glyphicon glyphicon-comment" ng-click="comment.commentCount = !comment.commentCount" aria-hidden="true"></span>
+					</div>
+				    <hr class="patchLine">
+
+				    <h5 style="font-size: 2em; font-weight: bold;" ng-show="comment.commentCount">{{ctrl.comments[image.id].length}}</h5>
+
+		            <div id="textBox{{image.id}}" ng-hide="comment.commentCount" class="textBox">
+					    <h6 ng-repeat="comment in ctrl.comments[image.id] track by $index" >{{ comment }}</h6>
+					</div>
+
+					<span class="input input--kozakura">
+		            <form ng-submit="ctrl.postComment(ctrl.commentResult,image.id)">
+						<input  class="input__field input__field--kozakura" type="text" id="input-7" ng-model="ctrl.commentResult"/>
+						<label class="input__label input__label--kozakura" for="input-7">
+						<span class="input__label-content input__label-content--kozakura" data-content="comment">Comment</span>
+						</label>
+						<svg class="graphic graphic--kozakura" width="300%" height="100%" viewBox="0 0 1200 60" preserveAspectRatio="none">
+							<path d="M1200,9c0,0-305.005,0-401.001,0C733,9,675.327,4.969,598,4.969C514.994,4.969,449.336,9,400.333,9C299.666,9,0,9,0,9v43c0,0,299.666,0,400.333,0c49.002,0,114.66,3.484,197.667,3.484c77.327,0,135-3.484,200.999-3.484C894.995,52,1200,52,1200,52V9z"/>
+						</svg>
+						<!-- <button class="btn btn-default" type="submit" style="margin-top: 10px;">Post</button> -->
+					</form>
+					</span>
+				</div>
+			</div>	
+		</div>
+
+
+</div>
